@@ -1,0 +1,81 @@
+.employee-list-table {
+    .table {
+        width: 100%;
+        background-color: #fff;
+        border-collapse: collapse;
+        .thead {
+            .table-row {
+                .table-head {
+                    width: 100%;
+                    padding: 14px;
+                    background-color: rgb(78, 189, 137);
+                    color: #fff;
+                    overflow-wrap: break-word;
+                    text-align: center;
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+                .table-head-select {
+                    width: 20%;
+                    padding: 14px;
+                    border-radius: 8px 0 0 8px;
+                    background-color: rgb(78, 189, 137);
+                    color: #fff;
+                    overflow-wrap: break-word;
+                    text-align: center;
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+            }
+        }
+        .tbody {
+            .table-row {
+                .table-data {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    font-family: "Roboto", sans-serif;
+                    overflow-wrap: break-word;
+                    text-align: center;
+                    padding: 20px 12px;
+                }
+                .table-data-select {
+                    display: flex;
+                    justify-content: center;
+                    width: 20%;
+                    font-family: "Roboto", sans-serif;
+                    overflow-wrap: break-word;
+                    text-align: center;
+                    padding: 20px 12px;
+                }
+                .blue {
+                    cursor: pointer;
+                    color: #53c6fd;
+                }
+                .red {
+                    color: #ff485a;
+                    cursor: pointer;
+                }
+                .active-status {
+                    padding: 10px 20px;
+                    border-radius: 30px;
+                    color: #fff;
+                }
+                .sweet-red {
+                    background-color: rgba(252, 87, 59, 1);
+                }
+                .green {
+                    background-color: rgba(90, 194, 41, 1);
+                }
+                .edit-btn {
+                    cursor: pointer;
+                }
+                .delete-btn {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

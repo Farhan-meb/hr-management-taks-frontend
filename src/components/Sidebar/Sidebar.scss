@@ -1,0 +1,158 @@
+$sidebar-bg-color: #ffffff !default;
+$sidebar-color: #fff !default;
+$sidebar-width: 280px !default;
+$sidebar-collapsed-width: 80px !default;
+$submenu-bg-color: #2f4f77;
+$submenu-bg-color-collapsed: #274366 !default;
+// $icon-bg-color: #274366 !default;
+$icon-size: 40px !default;
+$submenu-indent: 24px !default;
+$breakpoint-xs: 480px !default;
+$breakpoint-sm: 576px !default;
+$breakpoint-md: 768px !default;
+$breakpoint-lg: 992px !default;
+$breakpoint-xl: 1200px !default;
+$breakpoint-xxl: 1600px !default;
+
+.active {
+    background-color: rgb(0, 197, 105) !important;
+    border-radius: 5px !important;
+    border: none;
+
+    .pro-item-content {
+        color: #ffffff;
+    }
+    .pro-icon {
+        svg {
+            height: 1.5em;
+            width: 1.5em;
+            path {
+                fill: #000000;
+            }
+        }
+    }
+    .pro-arrow {
+        border-color: #274366 !important;
+    }
+}
+
+.pro-sidebar {
+    overflow: overlay;
+    overflow-x: hidden;
+    position: fixed !important;
+    left: 0;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    /* width */
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    .sidebar-header {
+        // box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+        //     rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        font-weight: bold;
+        background: #ffffff;
+        color: rgb(0, 197, 105);
+        text-align: center;
+    }
+
+    .sidebar-header .user-email {
+        font-size: 14px;
+        color: rgb(0, 97, 52);
+        margin: 0px;
+    }
+
+    .user-image {
+        height: 70px;
+        width: 70px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .user-name {
+        margin: 0px;
+    }
+
+    .pro-menu {
+        .pro-menu-item {
+            box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+            background: #ffffff;
+            color: black;
+            width: 90%;
+            border-radius: 5px;
+            margin-left: 10px;
+            margin-top: 5px;
+
+            .badge-red {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #ff4558;
+                padding: 3px 6px;
+                font-size: 9px;
+                letter-spacing: 1px;
+                border-radius: 15px;
+            }
+
+            .badge-yellow {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #ff7f08;
+                padding: 0px 6px;
+                font-size: 9px;
+                letter-spacing: 1px;
+                border-radius: 15px;
+                font-size: 12px;
+            }
+
+            .badge-green {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: rgb(255, 255, 255);
+                background: #17bd86;
+                padding: 0px 6px;
+                font-size: 9px;
+                letter-spacing: 1px;
+                border-radius: 15px;
+                font-size: 12px;
+            }
+
+            .pro-inner-item {
+                padding: 6px 35px 8px 20px !important;
+
+                .pro-icon {
+                    svg {
+                        height: 1.4em;
+                        width: 1.4em;
+                    }
+                }
+
+                &:hover {
+                    background-color: #ffffff;
+                    border-radius: 5px;
+                    .pro-item-content {
+                        color: #274366;
+                    }
+                    .pro-icon {
+                        svg {
+                            height: 1.5em;
+                            width: 1.5em;
+                            path {
+                                fill: #274366;
+                            }
+                        }
+                    }
+                    .pro-arrow {
+                        border-color: #274366 !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@import "~react-pro-sidebar/dist/scss/styles.scss";

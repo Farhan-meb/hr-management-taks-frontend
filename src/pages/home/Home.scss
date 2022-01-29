@@ -1,0 +1,11 @@
+.home-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .employeelist-table-wrapper {
+        width: 90%;
+        .employeelist-table {
+            width: 100%;
+        }
+    }
+}
