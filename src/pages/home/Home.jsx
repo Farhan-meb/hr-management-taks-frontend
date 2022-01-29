@@ -10,10 +10,14 @@ const Home = () => {
     const [employeeList, setEmployeeList] = useState([]);
 
     useEffect(() => {
+        console.log(employeeList);
+    }, [employeeList]);
+
+    useEffect(() => {
         let isMount = true;
         axiosInstance.get("api/employee").then((res) => {
             if (isMount) {
-                for (let employee of employeeList) {
+                for (let employee of res.data.employees) {
                     employee["selected"] = false;
                 }
                 setEmployeeList(res.data.employees);
@@ -33,9 +37,15 @@ const Home = () => {
                 <Helmet>
                     <title>Home</title>
                 </Helmet>
+                <div className="home-action">
+                    <button className="home-button">Send Email</button>
+                </div>
                 <div className="employeelist-table-wrapper">
                     <div className="employeelist-table">
-                        <EmployeeListTable employeeList={employeeList} />
+                        <EmployeeListTable
+                            employeeList={employeeList}
+                            setEmployeeList={setEmployeeList}
+                        />
                     </div>
                 </div>
             </div>

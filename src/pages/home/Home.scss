@@ -1,7 +1,38 @@
 .home-container {
     width: 100%;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .home-action {
+        width: 80%;
+        height: 80px;
+        padding-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .home-button {
+            background-color: #00c569;
+
+            padding: 11px 12px;
+            background-color: rgb(255, 255, 255);
+            font-weight: bold;
+            color: #00c569;
+            border: 2px solid #00c569;
+            border-radius: 8px;
+            cursor: pointer;
+
+            &:hover {
+                padding: 13px 13px;
+                background-color: #00c569;
+                font-weight: bold;
+                color: #ffffff;
+                border: 2px solid #00c569;
+            }
+        }
+    }
+
     .employeelist-table-wrapper {
         width: 90%;
         .employeelist-table {

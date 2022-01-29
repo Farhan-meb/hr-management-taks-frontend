@@ -3,17 +3,11 @@ import { useEffect, useState } from "react";
 
 import "./EmployeeListTable.scss";
 
-const EmployeeListTable = ({ employeeList }) => {
-    const [updatedEmployeeList, setUpdatedEmployeeList] = useState([]);
-
-    useEffect(() => {
-        //email patabo
-    }, [updatedEmployeeList]);
-
+const EmployeeListTable = ({ employeeList, setEmployeeList }) => {
     const employeeSelect = (index) => {
         const _employeeList = [...employeeList];
         _employeeList[index].selected = true;
-        setUpdatedEmployeeList(_employeeList);
+        setEmployeeList(_employeeList);
     };
 
     return (
