@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { Helmet } from "react-helmet";
 import axiosInstance from "../../services/axiosInstance";
 import EmailModal from "../../components/Modal/EmailModal/EmailModal";
+import AddBulkEmployee from "../../components/Employee/AddBulkEmployee/AddBulkEmployee";
 
 import "./Home.scss";
 
@@ -15,6 +16,9 @@ const Home = () => {
     const [showNext, setShowNext] = useState(true);
     const [showPrev, setShowPrev] = useState(false);
     const [showModal, setShowModal] = useState(false);
+    const [emailSubject, setEmailSubject] = useState("");
+    const [emailBody, setEmailBody] = useState("");
+    const [loader, setLoader] = useState(false);
 
     useEffect(() => {
         let isMount = true;
@@ -47,16 +51,42 @@ const Home = () => {
         };
     }, [currentPage]);
 
-    const handleSendEmail = () => {
+    const handleSendEmail = (e) => {
+        e.preventDefault();
+
+        setLoader(true);
+
         axiosInstance
             .post("api/employee/send-email", {
                 emails,
+                subject: emailSubject,
+                body: emailBody,
             })
             .then((res) => {
-                toast.success(res.data.message);
+                for (let email of res.data.emails) {
+                    toast.success(res.data.message + " " + email, {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: false,
+                        draggable: true,
+                        progress: undefined,
+                    });
+                }
             })
             .catch((err) => {
                 toast.error(err);
+            })
+            .finally(() => {
+                setShowModal(false);
+                setLoader(false);
+                setEmails([]);
+                const _employeeList = [...employeeList];
+                for (let employee of _employeeList) {
+                    employee.selected = false;
+                }
+                setEmployeeList(_employeeList);
             });
     };
 
@@ -88,6 +118,7 @@ const Home = () => {
                 <h4 className="header-text">HR-Management / Employee List</h4>
 
                 <div className="home-action">
+                    <AddBulkEmployee loader={loader} />
                     <button className="home-button" onClick={openEmailModal}>
                         Send Email
                     </button>
@@ -103,15 +134,24 @@ const Home = () => {
                             showPrev={showPrev}
                             emails={emails}
                             setEmails={setEmails}
+                            currentPage={currentPage}
                         />
                     </div>
                 </div>
             </div>
 
-            {showModal && <EmailModal setShowModal={setShowModal} />}
+            {showModal && (
+                <EmailModal
+                    setShowModal={setShowModal}
+                    setEmailSubject={setEmailSubject}
+                    setEmailBody={setEmailBody}
+                    handleSendEmail={handleSendEmail}
+                    loader={loader}
+                />
+            )}
 
             <ToastContainer
-                position="top-center"
+                position="top-right"
                 autoClose={2000}
                 hideProgressBar={false}
                 newestOnTop={false}
@@ -119,7 +159,7 @@ const Home = () => {
                 rtl={false}
                 pauseOnFocusLoss
                 draggable
-                pauseOnHover={false}
+                pauseOnHover
             />
         </>
     );

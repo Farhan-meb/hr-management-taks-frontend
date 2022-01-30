@@ -5,16 +5,17 @@ import Helmet from "react-helmet";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./AddEmployee.scss";
-import AddEmployeeForm from "../../components/Employee/AddEmployeeForm";
+import AddEmployeeForm from "../../components/Employee/AddEmployee/AddEmployeeForm";
 
 const AddEmployee = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
+    const [loader, setLoader] = useState(false);
 
     const handleAddEmployee = (e) => {
         e.preventDefault();
-
+        setLoader(true);
         axiosInstance
             .post("api/employee", {
                 first_name: firstName,
@@ -30,6 +31,9 @@ const AddEmployee = () => {
             .catch((err) => {
                 const errMsg = err.response.data.message;
                 toast.error(errMsg);
+            })
+            .finally(() => {
+                setLoader(false);
             });
     };
 
@@ -48,12 +52,13 @@ const AddEmployee = () => {
                         email={email}
                         setEmail={setEmail}
                         handleAddEmployee={handleAddEmployee}
+                        loader={loader}
                     />
                 </div>
             </div>
             <ToastContainer
-                position="bottom-right"
-                autoClose={5000}
+                position="top-right"
+                autoClose={2000}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick

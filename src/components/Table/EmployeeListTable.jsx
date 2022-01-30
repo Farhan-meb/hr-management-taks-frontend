@@ -13,6 +13,7 @@ const EmployeeListTable = ({
     showPrev,
     emails,
     setEmails,
+    currentPage,
 }) => {
     const employeeSelect = (index) => {
         const _employeeList = [...employeeList];
@@ -84,6 +85,9 @@ const EmployeeListTable = ({
                             <PrevIcon />
                         </button>
                     )}
+                    <div className="current-page">
+                        <div className="current-page-text">{currentPage}</div>
+                    </div>
                     {showNext && (
                         <button onClick={handleNext}>
                             <NextIcon />

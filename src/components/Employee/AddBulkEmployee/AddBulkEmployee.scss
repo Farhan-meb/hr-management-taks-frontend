@@ -1,0 +1,35 @@
+.import-product-section {
+    .import-form {
+        .import-product-body {
+            display: flex;
+            gap: 30px;
+        }
+
+        .input-form {
+            padding: 13px 13px;
+            background-color: #f9f9f9;
+            font-weight: bold;
+            border-radius: 8px;
+            color: rgb(182, 182, 182);
+        }
+
+        .btn {
+            background-color: #00c569;
+            padding: 11px 12px;
+            background-color: rgb(255, 255, 255);
+            font-weight: bold;
+            color: #00c569;
+            border: 2px solid #00c569;
+            border-radius: 8px;
+            cursor: pointer;
+
+            &:hover {
+                padding: 13px 13px;
+                background-color: #00c569;
+                font-weight: bold;
+                color: #ffffff;
+                border: 2px solid #00c569;
+            }
+        }
+    }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from "../../Loader/Loader";
 import "./AddEmployeeForm.scss";
 
 const AddEmployeeForm = ({
@@ -9,6 +10,7 @@ const AddEmployeeForm = ({
     email,
     setEmail,
     handleAddEmployee,
+    loader,
 }) => {
     return (
         <form className="add-form" onSubmit={handleAddEmployee}>
@@ -57,11 +59,12 @@ const AddEmployeeForm = ({
             </div>
 
             <div className="form-action">
-                <input
+                <button
                     type="submit"
-                    value="Add Employee"
-                    className="form-btn"
-                />
+                    className={loader ? "btn-loader" : "form-btn"}
+                >
+                    {loader ? <Loader width={2} height={2} /> : "Add Employee"}
+                </button>
             </div>
         </form>
     );

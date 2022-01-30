@@ -88,6 +88,21 @@
     .table-pagination {
         display: flex;
         justify-content: flex-end;
+
+        .current-page {
+            height: 26px;
+            background: #dddddd;
+            padding: 5px;
+            width: 27px;
+            border-radius: 50%;
+
+            .current-page-text {
+                text-align: center;
+                font-weight: bold;
+                font-size: 16px;
+            }
+        }
+
         button {
             border: none;
             background-color: #fff;

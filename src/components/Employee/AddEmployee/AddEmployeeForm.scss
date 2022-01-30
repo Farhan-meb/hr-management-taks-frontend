@@ -35,7 +35,6 @@
 
     .form-action {
         width: 300px;
-
         .form-btn {
             width: 100%;
             padding: 11px 12px;
@@ -53,6 +52,12 @@
                 color: #ffffff;
                 border: 2px solid #00c569;
             }
+        }
+
+        .btn-loader {
+            border: none;
+            background-color: #fff;
+            width: 100%;
         }
     }
 }
