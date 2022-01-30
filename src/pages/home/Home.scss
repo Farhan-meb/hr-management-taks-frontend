@@ -4,10 +4,20 @@
     align-items: center;
     flex-direction: column;
 
+    .header-text {
+        font-weight: 500;
+        font-size: 20px;
+        width: 90%;
+        display: flex;
+        height: 0px;
+        line-height: 28px;
+        margin-top: 100px;
+        color: #040b58;
+    }
+
     .home-action {
         width: 80%;
         height: 80px;
-        padding-top: 40px;
         display: flex;
         align-items: center;
         justify-content: flex-end;

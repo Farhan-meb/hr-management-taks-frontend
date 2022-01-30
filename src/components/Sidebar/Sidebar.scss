@@ -4,7 +4,6 @@ $sidebar-width: 280px !default;
 $sidebar-collapsed-width: 80px !default;
 $submenu-bg-color: #2f4f77;
 $submenu-bg-color-collapsed: #274366 !default;
-// $icon-bg-color: #274366 !default;
 $icon-size: 40px !default;
 $submenu-indent: 24px !default;
 $breakpoint-xs: 480px !default;
@@ -53,7 +52,7 @@ $breakpoint-xxl: 1600px !default;
         padding-top: 30px;
         padding-bottom: 30px;
         font-weight: bold;
-        background: #ffffff;
+        background: #f9f9f9;
         color: rgb(0, 197, 105);
         text-align: center;
     }
@@ -73,6 +72,10 @@ $breakpoint-xxl: 1600px !default;
 
     .user-name {
         margin: 0px;
+    }
+
+    .pro-sidebar-content {
+        background-color: #fcfcfc;
     }
 
     .pro-menu {

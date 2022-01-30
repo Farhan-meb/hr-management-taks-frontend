@@ -1,0 +1,34 @@
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(100, 99, 99, 0.37);
+    position: fixed;
+    top: 0;
+    left: 9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .delete-container {
+        width: 500px;
+        background: #fff;
+        padding: 2rem;
+        box-shadow: 0 0 15px #00000011;
+        .btn-wrapper {
+            .btn {
+                border: none;
+                padding: 10px 20px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .cancel-btn {
+                background-color: #eeeeee;
+            }
+            .confirm-btn {
+                background-color: #55d400;
+                color: #fff;
+                border: none;
+            }
+        }
+    }
+}

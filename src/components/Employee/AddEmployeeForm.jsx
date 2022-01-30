@@ -22,7 +22,7 @@ const AddEmployeeForm = ({
                     <input
                         className="input"
                         type="text"
-                        placeholder="Your first name"
+                        placeholder="first name.."
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
                         required
@@ -35,7 +35,7 @@ const AddEmployeeForm = ({
                     <input
                         className="input"
                         type="text"
-                        placeholder="Your last name"
+                        placeholder="last name.."
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
                         required
@@ -48,7 +48,7 @@ const AddEmployeeForm = ({
                     <input
                         className="input"
                         type="text"
-                        placeholder="Your email"
+                        placeholder="email.."
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required

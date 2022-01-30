@@ -42,7 +42,7 @@ const Sidebar = () => {
                             />
                         </div>
                     </div>
-                    <p className="user-name text-white">HR Management</p>
+                    <p className="user-name text-white">HR Admin</p>
                     <p className="user-email">017XX-XXXXXX</p>
                 </div>
             </SidebarHeader>

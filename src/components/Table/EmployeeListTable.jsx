@@ -1,13 +1,26 @@
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+import PrevIcon from "./_icon/PrevIcon";
+import NextIcon from "./_icon/NextIcon";
 
 import "./EmployeeListTable.scss";
 
-const EmployeeListTable = ({ employeeList, setEmployeeList }) => {
+const EmployeeListTable = ({
+    employeeList,
+    setEmployeeList,
+    handleNext,
+    handlePrev,
+    showNext,
+    showPrev,
+    emails,
+    setEmails,
+}) => {
     const employeeSelect = (index) => {
         const _employeeList = [...employeeList];
         _employeeList[index].selected = true;
         setEmployeeList(_employeeList);
+        const _emails = emails;
+        _emails.push(_employeeList[index].email);
+        setEmails(_emails);
     };
 
     return (
@@ -33,7 +46,11 @@ const EmployeeListTable = ({ employeeList, setEmployeeList }) => {
                             return (
                                 <tr
                                     key={index}
-                                    className="flex jc-space-between align-center table-row"
+                                    className={
+                                        employee.selected === true
+                                            ? "flex jc-space-between align-center table-row table-row-selected"
+                                            : "flex jc-space-between align-center table-row"
+                                    }
                                 >
                                     <td
                                         scope="row"
@@ -61,6 +78,18 @@ const EmployeeListTable = ({ employeeList, setEmployeeList }) => {
                             );
                         })}
                 </tbody>
+                <div className="table-pagination">
+                    {showPrev && (
+                        <button onClick={handlePrev}>
+                            <PrevIcon />
+                        </button>
+                    )}
+                    {showNext && (
+                        <button onClick={handleNext}>
+                            <NextIcon />
+                        </button>
+                    )}
+                </div>
             </table>
         </div>
     );
