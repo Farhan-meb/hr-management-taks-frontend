@@ -24,6 +24,17 @@ const EmployeeListTable = ({
         setEmails(_emails);
     };
 
+    const employeeDeselect = (index) => {
+        const _employeeList = [...employeeList];
+        _employeeList[index].selected = false;
+        setEmployeeList(_employeeList);
+
+        const _emails = emails;
+        const emailIndex = _emails.indexOf(_employeeList[index].email);
+        _emails.splice(emailIndex, 1);
+        setEmails(_emails);
+    };
+
     return (
         <div className="employee-list-table">
             <table className="table mt-20">
@@ -62,7 +73,9 @@ const EmployeeListTable = ({
                                             checked={employee.selected}
                                             className="form-check-input"
                                             onChange={() =>
-                                                employeeSelect(index)
+                                                employee.selected
+                                                    ? employeeDeselect(index)
+                                                    : employeeSelect(index)
                                             }
                                         />
                                     </td>

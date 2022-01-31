@@ -19,6 +19,9 @@ const AddEmployee = () => {
     const handleAddEmployee = (e) => {
         e.preventDefault();
         setLoader(true);
+
+        if (checkValidations()) return;
+
         axiosInstance
             .post("api/employee", {
                 first_name: firstName,
@@ -38,6 +41,20 @@ const AddEmployee = () => {
             .finally(() => {
                 setLoader(false);
             });
+    };
+
+    const checkValidations = () => {
+        if (firstName.length < 2) {
+            toast.warning("First Name lenght has to be greater than 2");
+            setLoader(false);
+            return true;
+        }
+
+        if (lastName.length < 2) {
+            toast.warning("Last Name lenght has to be greater than 2");
+            setLoader(false);
+            return true;
+        }
     };
 
     const handleAddBulkEmployee = (e) => {
