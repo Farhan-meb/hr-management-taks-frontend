@@ -40,7 +40,6 @@
                     display: flex;
                     justify-content: center;
                     width: 100%;
-
                     overflow-wrap: break-word;
                     text-align: center;
                     padding: 20px 12px;
@@ -54,34 +53,9 @@
                     text-align: center;
                     padding: 20px 12px;
                 }
-                .blue {
-                    cursor: pointer;
-                    color: #53c6fd;
-                }
-                .red {
-                    color: #ff485a;
-                    cursor: pointer;
-                }
-                .active-status {
-                    padding: 10px 20px;
-                    border-radius: 30px;
-                    color: #fff;
-                }
-                .sweet-red {
-                    background-color: rgba(252, 87, 59, 1);
-                }
-                .green {
-                    background-color: rgba(90, 194, 41, 1);
-                }
-                .edit-btn {
-                    cursor: pointer;
-                }
-                .delete-btn {
-                    cursor: pointer;
-                }
             }
             .table-row-selected {
-                background-color: #c7e1ca;
+                background-color: #ddffe1;
             }
         }
     }
@@ -91,7 +65,8 @@
 
         .current-page {
             height: 26px;
-            background: #dddddd;
+            background: #ffa500;
+            color: #fff;
             padding: 5px;
             width: 27px;
             border-radius: 50%;

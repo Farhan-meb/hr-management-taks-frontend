@@ -64,10 +64,11 @@ $breakpoint-xxl: 1600px !default;
     }
 
     .user-image {
-        height: 70px;
-        width: 70px;
+        height: 120px;
+        width: 120px;
         object-fit: cover;
         border-radius: 10px;
+        border: 2px solid #00c569;
     }
 
     .user-name {
