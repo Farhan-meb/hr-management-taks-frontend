@@ -1,12 +1,13 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useState } from "react";
 import axiosInstance from "../../services/axiosInstance";
 import Helmet from "react-helmet";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./AddEmployee.scss";
 import AddEmployeeForm from "../../components/Employee/AddEmployee/AddEmployeeForm";
 import AddBulkEmployee from "../../components/Employee/AddBulkEmployee/AddBulkEmployee";
+
+import "./AddEmployee.scss";
 
 const AddEmployee = () => {
     const [firstName, setFirstName] = useState("");
