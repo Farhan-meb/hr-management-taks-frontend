@@ -259,3 +259,7 @@
 input::placeholder {
     color: rgb(182, 182, 182);
 }
+
+textarea::placeholder {
+    color: rgb(182, 182, 182);
+}
