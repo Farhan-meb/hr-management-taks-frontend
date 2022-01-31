@@ -118,7 +118,6 @@ const Home = () => {
                 <h4 className="header-text">HR-Management / Employee List</h4>
 
                 <div className="home-action">
-                    <AddBulkEmployee loader={loader} />
                     <button className="home-button" onClick={openEmailModal}>
                         Send Email
                     </button>

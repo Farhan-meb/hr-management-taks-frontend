@@ -22,7 +22,7 @@
     justify-content: space-around;
 }
 
-.jc-end{
+.jc-end {
     justify-content: end;
 }
 
@@ -50,7 +50,7 @@
     gap: 20px;
 }
 
-.gap-60{
+.gap-60 {
     gap: 60px;
 }
 
@@ -98,7 +98,7 @@
     margin-top: 20px;
 }
 
-.mt-30{
+.mt-30 {
     margin-top: 30px;
 }
 
@@ -118,7 +118,7 @@
     margin-bottom: 15px;
 }
 
-.ml-5{
+.ml-5 {
     margin-left: 5px;
 }
 
@@ -134,7 +134,7 @@
     margin-left: 40px;
 }
 
-.ml-140{
+.ml-140 {
     margin-left: 140px;
 }
 
@@ -177,7 +177,7 @@
     color: gray;
 }
 
-.text-red{
+.text-red {
     color: red;
 }
 
@@ -209,7 +209,7 @@
     width: 250px;
 }
 
-.wd-200{
+.wd-200 {
     width: 200px;
 }
 
@@ -221,7 +221,7 @@
     width: 90%;
 }
 
-.wd-100{
+.wd-100 {
     width: 100%;
 }
 
@@ -237,11 +237,11 @@
     color: rgba(51, 171, 229, 1);
 }
 
-.blue{
+.blue {
     background-color: #33abe5;
 }
 
-.silver{
+.silver {
     background-color: #c4c4c4;
 }
 
@@ -254,4 +254,8 @@
     display: block;
     font-size: 13px;
     color: #ff0000;
+}
+
+input::placeholder {
+    color: rgb(182, 182, 182);
 }

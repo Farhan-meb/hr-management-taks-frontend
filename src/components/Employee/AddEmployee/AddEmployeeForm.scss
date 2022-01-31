@@ -14,6 +14,7 @@
 
         .form-field {
             text-align: right;
+
             .input {
                 width: 70%;
                 border: none;
@@ -23,6 +24,12 @@
                 font-weight: bold;
                 font-size: 14px;
                 color: #1b1b1b;
+
+                &:placeholder {
+                    /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: red;
+                    opacity: 1; /* Firefox */
+                }
 
                 &:focus {
                     outline: none;
@@ -61,3 +68,5 @@
         }
     }
 }
+
+/*Latest modern browsers */

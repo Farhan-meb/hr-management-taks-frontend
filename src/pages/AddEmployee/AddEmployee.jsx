@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./AddEmployee.scss";
 import AddEmployeeForm from "../../components/Employee/AddEmployee/AddEmployeeForm";
+import AddBulkEmployee from "../../components/Employee/AddBulkEmployee/AddBulkEmployee";
 
 const AddEmployee = () => {
     const [firstName, setFirstName] = useState("");
@@ -43,17 +44,20 @@ const AddEmployee = () => {
                 <Helmet>
                     <title>Add Employee</title>
                 </Helmet>
-                <div className="form">
-                    <AddEmployeeForm
-                        firstName={firstName}
-                        setFirstName={setFirstName}
-                        lastName={lastName}
-                        setLastName={setLastName}
-                        email={email}
-                        setEmail={setEmail}
-                        handleAddEmployee={handleAddEmployee}
-                        loader={loader}
-                    />
+                <div className="add-employee">
+                    <AddBulkEmployee />
+                    <div className="form">
+                        <AddEmployeeForm
+                            firstName={firstName}
+                            setFirstName={setFirstName}
+                            lastName={lastName}
+                            setLastName={setLastName}
+                            email={email}
+                            setEmail={setEmail}
+                            handleAddEmployee={handleAddEmployee}
+                            loader={loader}
+                        />
+                    </div>
                 </div>
             </div>
             <ToastContainer

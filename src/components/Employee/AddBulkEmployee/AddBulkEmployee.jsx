@@ -14,6 +14,7 @@ const AddBulkEmployee = ({ loader }) => {
                         type="file"
                         name="file"
                         accept="*.csv"
+                        required
                     />
                     <button className="btn">
                         {loader ? (
